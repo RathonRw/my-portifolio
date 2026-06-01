@@ -1,18 +1,19 @@
 export const siteConfig = {
   name: "Leo Constantin",
-  url: "https://www.founder.rathon-rw.com", // Replace with production URL
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://founder.rathon-rw.com",
   ogImage: "https://www.founder.rathon-rw.com/opengraph-image.png",
   description: "Developer, Prompt Engineer & Open Source Contributor",
   alternateName: "Lecon",
   jobTitle: "Developer & Prompt Engineer",
+  githubUser: "leconstantin",
   links: {
-    twitter: "https://x.com/rathonrw",
-    linkedin: "https://www.linkedin.com/company/rathon",
+    x: "https://x.com/lecon",
+    linkedin: "https://www.linkedin.com/lecon",
     instagram: "https://www.instagram.com/rathon.fast/",
     youtube: "https://www.youtube.com/@RathonRw",
-    email: "mailto:rathonrw@gmail.com",
+    email: "lecon@pm.me",
     whatsapp: "https://wa.me/250792636403",
-    github: "https://github.com/RathonRw",
+    github: "https://github.com/leconstantin",
   },
   keywords: [
     "Leo Constantin",
