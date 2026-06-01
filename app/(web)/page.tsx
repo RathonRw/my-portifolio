@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { Contact } from "@/features/home/contact";
 import { HeroWithStats } from "@/features/home/hero-with-stats";
+import { Projects } from "@/features/home/projects";
 
 export default function Home() {
   return (
@@ -10,8 +11,9 @@ export default function Home() {
         <Suspense fallback={<div className="h-screen" />}>
           <HeroWithStats />
         </Suspense>
-        {/*
+
         <Projects />
+        {/*
         <Skills />
         <Stack />
         <Suspense fallback={<div className="py-16" />}>
