@@ -23,3 +23,27 @@ export interface PayloadBlogPost {
   tags?: { tag: string }[];
   title: string;
 }
+
+export interface PhotoMetadata {
+  aperture?: string;
+  camera?: string;
+  dateTaken?: string;
+  focalLength?: string;
+  iso?: number;
+  lens?: string;
+  location?: string;
+  shutterSpeed?: string;
+}
+
+export interface Photo {
+  height: number;
+  id: string;
+  metadata: PhotoMetadata;
+  uploadedAt: string;
+  url: string;
+  width: number;
+}
+
+export interface PhotoManifest {
+  photos: Photo[];
+}

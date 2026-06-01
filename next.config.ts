@@ -5,6 +5,16 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   typedRoutes: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "picsum.photos",
+        pathname: "/id/**",
+        search: "",
+      },
+    ],
+  },
 };
 
 export default withContentCollections(nextConfig);
