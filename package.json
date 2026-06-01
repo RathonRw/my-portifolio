@@ -3,6 +3,7 @@
     "@radix-ui/react-use-controllable-state": "^1.2.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "date-fns": "^4.4.0",
     "geist": "^1.7.1",
     "lucide-react": "^1.17.0",
     "motion": "^12.40.0",
@@ -18,6 +19,9 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.15",
+    "@content-collections/core": "^0.15.1",
+    "@content-collections/mdx": "^0.2.2",
+    "@content-collections/next": "^0.2.11",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -26,7 +30,8 @@
     "lefthook": "^2.1.9",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "ultracite": "7.8.0"
+    "ultracite": "7.8.0",
+    "zod": "^4.4.3"
   },
   "name": "portifolio",
   "scripts": {

@@ -4,7 +4,6 @@ import { Check } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { siteConfig } from "@/config/site";
-import SiteFooter from "../_layout/site-footer";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -157,7 +156,6 @@ export function Contact() {
               .
             </p>
           </div>
-          <SiteFooter />
         </div>
       </div>
     </section>

@@ -14,3 +14,12 @@ export interface Project {
   subtitle: string;
   title: string;
 }
+
+export interface PayloadBlogPost {
+  excerpt: string;
+  id: string;
+  publishedAt: string;
+  slug: string;
+  tags?: { tag: string }[];
+  title: string;
+}
