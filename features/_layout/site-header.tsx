@@ -45,9 +45,10 @@ export function SiteHeader() {
   const navLinks = [
     { href: `${prefix}#home`, label: "Home" },
     { href: `${prefix}#projects`, label: "Projects" },
-    { href: `${prefix}#skills`, label: "Skills" },
+    // { href: `${prefix}#skills`, label: "Skills" },
     { href: `${prefix}#stack`, label: "Stack" },
     { href: `${prefix}#contact`, label: "Contact" },
+    { href: "/certificates", label: "Certificates" },
     { href: "/blog", label: "Blog" },
     { href: "/photos", label: "Photos" },
   ];

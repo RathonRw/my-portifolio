@@ -47,3 +47,17 @@ export interface Photo {
 export interface PhotoManifest {
   photos: Photo[];
 }
+
+export interface TCertificate {
+  category: string;
+  date: string;
+  link: string;
+  organization: string;
+  subtitle: string;
+  title: string;
+}
+
+export interface CertificateCategory {
+  category: string;
+  certificates: TCertificate[];
+}

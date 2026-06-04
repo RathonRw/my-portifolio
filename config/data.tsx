@@ -1,120 +1,165 @@
-import { Calendar, Code2, Globe, Shield } from "lucide-react";
-import { useEffect, useState } from "react";
-import { formatGithubThousands } from "@/lib/github-api";
+import type { CertificateCategory, TCertificate } from "@/types";
 
-export function useProjects() {
-  const [githubStats, setGithubStats] = useState<{
-    stars: string;
-    forks: string;
-  } | null>(null);
+export const DigitalSkillscertificates: TCertificate[] = [
+  {
+    title: "Digital Skills Foundation Certificate",
+    subtitle: "Digital Skills",
+    date: "September 14, 2023",
+    organization: "Google Digital Skills for Africa",
+    category: "Digital Skills",
+    link: "https://training.digitalskillsfdn.org/pluginfile.php/1/tool_certificate/issues/1694700901/9729963503ML.pdf",
+  },
+];
+export const WebdevCertificates: TCertificate[] = [
+  {
+    title: "Meta Front-End Developer Certificate",
+    subtitle: "Front-End Developer",
+    date: "December 26, 2024",
+    organization: "Coursera Meta",
+    category: "Front-End Development",
+    link: "https://coursera.org/share/8479e076469ca867565f54b0053b946a",
+  },
+  {
+    title: "Introduction Front-End Developement Certificate",
+    subtitle: "Front-End Developement",
+    date: "December 20, 2024",
+    organization: "Coursera Meta",
+    category: "Introduction",
+    link: "https://coursera.org/share/9b62fdb73dd8e269f46ade259530fe6d ",
+  },
+  {
+    title: "Version Control with Git",
+    subtitle: "Version Control",
+    date: "December 19, 2024",
+    organization: "Coursera Meta",
+    category: "Version Control",
+    link: "https://coursera.org/share/b471e6d0ed1291c9c3246ab61674ef53 ",
+  },
+  {
+    title: "Programming with Js",
+    subtitle: "JavaScript",
+    date: "December 19, 2024",
+    organization: "Coursera Meta",
+    category: "JavaScript",
+    link: "https://coursera.org/share/968b4301eacd0135393f370a05020736",
+  },
+  {
+    title: "Advanced React",
+    subtitle: "React",
+    date: "December 22, 2024",
+    organization: "Coursera Meta",
+    category: "React",
+    link: "https://coursera.org/share/f23256123c7e2b7f06b30a3ddcdd6818",
+  },
+  {
+    title: "Principles of UX/UI Design",
+    subtitle: "UX/UI Design",
+    date: "December 22, 2024",
+    organization: "Coursera Meta",
+    category: "Design",
+    link: "https://coursera.org/share/029b794048f52d722ed76ae35747c94c",
+  },
+  {
+    title: "React Basics",
+    subtitle: "React",
+    date: "December 20, 2024",
+    organization: "Coursera Meta",
+    category: "React",
+    link: "https://coursera.org/share/b893360e895006ba00dec0b7617c58ce",
+  },
+  {
+    title: "HTML and CSS in depth",
+    subtitle: "HTML5 and CSS3",
+    date: "December 19, 2024",
+    organization: "Coursera Meta",
+    category: "HTML5 and CSS3",
+    link: " https://coursera.org/share/954ea0bbd27b65fc01fdbf22965a1830",
+  },
+  {
+    title: "Coding Interview Preparation",
+    subtitle: "Interview Preparation",
+    date: "December 26, 2024",
+    organization: "Coursera Meta",
+    category: "Interview",
+    link: "https://coursera.org/share/6a80afb24937d8bb1f25dfe1ac45dbf5",
+  },
+  {
+    title: "Front-End Developer Capstone",
+    subtitle: "Front-End Developer",
+    date: "December 23, 2024",
+    organization: "Coursera Meta",
+    category: "Front-End Development",
+    link: "https://coursera.org/share/3b53f517ba1550cd77aeea786b61daa9",
+  },
+];
+export const LeadershipCertificates: TCertificate[] = [
+  {
+    title: "iLead Leadership Certificate",
+    subtitle: "Leadership",
+    date: "July 2024",
+    organization: "Maxwell Leadership Foundation",
+    category: "Leadership",
+    link: "https://drive.google.com/file/d/1GgtTgvUPAmlmwz7G-Q4G3A_Jd0wG1TdW/view?usp=sharing",
+  },
+  {
+    title: "iDo Leadership Certificate",
+    subtitle: "Leadership",
+    date: "July 2024",
+    organization: "Maxwell Leadership Foundation",
+    category: "Leadership",
+    link: "https://drive.google.com/file/d/18j75ufAEWYgqHLPbWp-Fhtdu3k4IpC6z/view?usp=sharing",
+  },
+  {
+    title: "iChoose Leadership Certificate",
+    subtitle: "Leadership",
+    date: "July 2024",
+    organization: "Maxwell Leadership Foundation",
+    category: "Leadership",
+    link: "https://drive.google.com/file/d/1wdGjjXqI7lVe4NSbkZFuC5W4_1nFpS6V/view?usp=sharing",
+  },
+];
+export const PythonCertificates: TCertificate[] = [
+  {
+    title: "Programming for Everybody (Getting Started with Python)",
+    subtitle: "Python",
+    date: "August 28, 2024",
+    organization: "Coursera Meta",
+    category: "Python",
+    link: "https://www.coursera.org/account/accomplishments/verify/X3Q24PALH510",
+  },
+  {
+    title: "Python Data Structures",
+    subtitle: "Python",
+    date: "August 30, 2024",
+    organization: "Coursera Meta",
+    category: "Python",
+    link: "https://www.coursera.org/account/accomplishments/verify/HU1VDDHQM2UP",
+  },
+  {
+    title: "Using Python to Access Web Data",
+    subtitle: "Python",
+    date: "September 2, 2024",
+    organization: "Coursera Meta",
+    category: "Python",
+    link: "https://www.coursera.org/account/accomplishments/verify/JWYVBPOLKV6S",
+  },
+];
 
-  useEffect(() => {
-    const fetchGitHubStats = async () => {
-      try {
-        const response = await fetch(
-          "https://api.github.com/repos/x1xhlol/system-prompts-and-models-of-ai-tools",
-          {
-            headers: {
-              Accept: "application/vnd.github+json",
-              "X-GitHub-Api-Version": "2022-11-28",
-            },
-          }
-        );
-        const data = (await response.json()) as {
-          message?: string;
-          stargazers_count?: number;
-          forks_count?: number;
-        };
-
-        if (!response.ok || typeof data.stargazers_count !== "number") {
-          setGithubStats({ stars: "—", forks: "—" });
-          return;
-        }
-
-        setGithubStats({
-          stars: formatGithubThousands(data.stargazers_count),
-          forks:
-            typeof data.forks_count === "number"
-              ? formatGithubThousands(data.forks_count)
-              : "—",
-        });
-      } catch (error) {
-        console.error("Failed to fetch GitHub stats:", error);
-        setGithubStats({ stars: "—", forks: "—" });
-      }
-    };
-
-    fetchGitHubStats();
-  }, []);
-  return [
-    {
-      title: "System Prompts and Models of AI Tools",
-      subtitle: "AI Research / Open Source",
-      description:
-        "Reverse-engineered system prompts from major AI coding assistants including v0, Cursor, and Windsurf.",
-      fullDescription:
-        "This repository contains reverse-engineered system prompts from major AI coding assistants. I extract, document, and analyze the internal instructions that tools like v0, Cursor, Manus, and Windsurf use to guide their LLMs. The goal is transparency: developers can understand how these tools work and improve their own prompt engineering.",
-      image:
-        "https://xobhe5j5syssmps0.public.blob.vercel-storage.com/Screenshot%202026-01-07%20152543.png",
-      stats: githubStats,
-      links: {
-        github:
-          "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-      },
-      icon: Code2,
-    },
-    {
-      title: "ZeroLeaks",
-      subtitle: "Cybersecurity / SaaS",
-      description:
-        "Security testing platform for LLM applications to identify prompt extraction vulnerabilities.",
-      fullDescription:
-        "ZeroLeaks is a security platform built to help companies test their LLM deployments. It simulates prompt injection and extraction attacks to identify if system prompts can be leaked. The platform provides detailed reports and remediation strategies to harden AI applications against these attack vectors.",
-      image:
-        "https://xobhe5j5syssmps0.public.blob.vercel-storage.com/Screenshot%202026-01-11%20190656.png",
-      links: {
-        github: "https://github.com/ZeroLeaks/zeroleaks",
-        demo: "https://zeroleaks.ai",
-      },
-      icon: Shield,
-    },
-    {
-      title: "Zero Calendar",
-      subtitle: "Productivity",
-      description:
-        "AI-powered calendar with natural language event creation and Google Calendar sync.",
-      fullDescription:
-        'Zero Calendar is an open-source scheduling tool. Instead of clicking through date pickers, you type natural language like "lunch with Alex next Tuesday at noon" and it parses everything automatically. It syncs with Google Calendar and supports recurring events.',
-      image: "/projects/zero-calendar.png",
-      links: {
-        github: "https://github.com/x1xhlol/zero-calendar",
-      },
-      icon: Calendar,
-    },
-    {
-      title: "Better-Clawd",
-      subtitle: "Developer Tools / CLI",
-      description:
-        "A faster, telemetry-free Claude Code fork with OpenAI, OpenRouter, and Anthropic support.",
-      fullDescription:
-        "Better-Clawd is an independent Claude Code fork focused on performance, provider flexibility, and local-first behavior. It keeps the original CLI experience that worked, removes telemetry, reduces vendor lock-in, and adds support for OpenAI, OpenRouter, and Anthropic without turning setup into a science project.",
-      image: "/projects/better-clawd-terminal.png",
-      links: {
-        github: "https://github.com/x1xhlol/better-clawd",
-      },
-      icon: Code2,
-    },
-    {
-      title: "This portfolio",
-      subtitle: "lucasvalbuena.com",
-      description:
-        "Personal site built with Next.js and Tailwind: projects, blog, stack, and photos.",
-      fullDescription:
-        "My personal site runs on Next.js and Tailwind. I use it for project write-ups, blog posts, and my photography. Source is on GitHub.",
-      links: {
-        github: "https://github.com/x1xhlol/lucasvalbuena.com",
-      },
-      icon: Globe,
-    },
-  ];
-}
+export const certificates: CertificateCategory[] = [
+  {
+    category: "Web Development",
+    certificates: WebdevCertificates,
+  },
+  {
+    category: "Python",
+    certificates: PythonCertificates,
+  },
+  {
+    category: "Leadership",
+    certificates: LeadershipCertificates,
+  },
+  {
+    category: "Digital Skills",
+    certificates: DigitalSkillscertificates,
+  },
+];

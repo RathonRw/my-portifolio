@@ -12,7 +12,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { useProjects } from "@/config/data";
+import { useProjects } from "@/config/projects";
 
 export function Projects() {
   const sectionRef = useRef<HTMLDivElement>(null);
