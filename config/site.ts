@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Leo Constantin",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://founder.rathon-rw.com",
-  ogImage: "https://www.founder.rathon-rw.com/opengraph-image.png",
+  ogImage: "https://ik.imagekit.io/leco/Rathon/opengraph-image.png",
   description: "Developer, Prompt Engineer & Open Source Contributor",
   alternateName: "Lecon",
   jobTitle: "Developer & Prompt Engineer",
