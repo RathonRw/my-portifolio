@@ -32,9 +32,9 @@ export function Skills() {
 
   const areas = [
     {
-      title: "AI security",
+      title: "Design",
       description:
-        "Finding and fixing prompt injection and system-prompt extraction in production LLM apps.",
+        "Finding and learning how other designer design their products. I spent my weekend looking on how other designers think.",
     },
     {
       title: "Reverse engineering",
