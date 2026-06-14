@@ -66,7 +66,7 @@ export function Hero({
             <motion.div className="space-y-4" variants={child}>
               <p className="max-w-xl text-[15px] text-foreground/90 leading-relaxed md:text-base">
                 I reverse-engineer AI tools and ship security research. 16,
-                based in Spain.
+                based in Kigali.
               </p>
               <p className="max-w-xl text-[15px] text-foreground/90 leading-relaxed md:text-base">
                 I run{" "}
@@ -76,7 +76,7 @@ export function Hero({
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  ZeroLeaks
+                  KuluChat
                 </a>
                 , a platform that stress-tests LLM apps for prompt injection and
                 system-prompt extraction.
@@ -89,7 +89,7 @@ export function Hero({
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  system-prompts-and-models-of-ai-tools
+                  Rathon
                 </a>{" "}
                 ({systemPrompts.stars} stars), a public archive of how the main
                 AI tools guide their LLMs.
@@ -119,7 +119,7 @@ export function Hero({
               </a>
               <a
                 className="inline-flex items-center gap-2 rounded-md border border-border bg-background/60 px-3 py-1.5 text-[11px] transition-colors duration-150 hover:bg-muted/60"
-                href="https://x.com/notlucknite/status/2012065359717708279"
+                href={siteConfig.links.x}
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -137,7 +137,7 @@ export function Hero({
               <a
                 aria-label="GitHub profile"
                 className="rounded-md p-2 text-muted-foreground transition-colors duration-150 hover:bg-muted/60 hover:text-foreground"
-                href="https://github.com/x1xhlol"
+                href={siteConfig.links.github}
                 rel="noopener noreferrer"
                 target="_blank"
               >

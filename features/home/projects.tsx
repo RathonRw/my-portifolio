@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, GitFork, Globe, Star, X } from "lucide-react";
+import { ArrowUpRight, Globe, X } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useRef } from "react";
 import { FiGithub } from "react-icons/fi";
@@ -145,25 +145,6 @@ export function Projects() {
                       <DialogDescription className="text-[14px] text-foreground/85 leading-relaxed sm:text-[15px]">
                         {project.fullDescription}
                       </DialogDescription>
-
-                      {project.stats && (
-                        <div className="flex items-center gap-4 text-muted-foreground text-xs">
-                          <span className="inline-flex items-center gap-1.5">
-                            <Star className="h-3.5 w-3.5" />
-                            <span className="font-medium font-mono text-foreground tabular-nums">
-                              {project.stats.stars}
-                            </span>
-                            <span>stars</span>
-                          </span>
-                          <span className="inline-flex items-center gap-1.5">
-                            <GitFork className="h-3.5 w-3.5" />
-                            <span className="font-medium font-mono text-foreground tabular-nums">
-                              {project.stats.forks}
-                            </span>
-                            <span>forks</span>
-                          </span>
-                        </div>
-                      )}
 
                       {(project.links.demo || project.links.github) && (
                         <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-border border-t pt-3">

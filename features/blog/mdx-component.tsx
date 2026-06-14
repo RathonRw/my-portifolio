@@ -3,7 +3,7 @@ import { Callout } from "./callout";
 export const components = {
   h1: ({ children, ...props }: ComponentProps<"h1">) => (
     <h1
-      className="my-5 scroll-m-20 font-bold text-3xl tracking-tight first:mt-0"
+      className="my-5 scroll-m-20 font-semibold text-3xl tracking-tight first:mt-0"
       {...props}
     >
       {children}
@@ -11,7 +11,7 @@ export const components = {
   ),
   h2: ({ children, ...props }: ComponentProps<"h2">) => (
     <h2
-      className="my-5 mb-3 scroll-m-20 font-semibold text-2xl tracking-tight"
+      className="my-5 mb-3 scroll-m-20 font-medium text-2xl tracking-tight"
       id={
         typeof children === "string"
           ? children.toLowerCase().replace(/\s+/g, "-")
@@ -28,10 +28,7 @@ export const components = {
     </h3>
   ),
   h4: ({ children, ...props }: ComponentProps<"h4">) => (
-    <h4
-      className="my-0 scroll-m-20 font-semibold text-lg tracking-tighter"
-      {...props}
-    >
+    <h4 className="my-0 scroll-m-20 font-medium tracking-tighter" {...props}>
       {children}
     </h4>
   ),
@@ -39,6 +36,11 @@ export const components = {
     <p className="my-1" {...props}>
       {children}
     </p>
+  ),
+  strong: ({ children, ...props }: ComponentProps<"strong">) => (
+    <strong className="font-medium" {...props}>
+      {children}
+    </strong>
   ),
   ul: ({ children, ...props }: ComponentProps<"ul">) => (
     <ul className="my-6 ml-6 list-disc [&>li]:mt-2" {...props}>
@@ -102,6 +104,7 @@ export const components = {
       {children}
     </code>
   ),
+
   img: ({ children, ...props }: ComponentProps<"img">) => {
     // Use Next.js Image component for better performance and accessibility
     // Use props.alt or fallback to empty string if not provided

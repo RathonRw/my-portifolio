@@ -7,12 +7,12 @@ export const siteConfig = {
   jobTitle: "Developer & Prompt Engineer",
   githubUser: "leconstantin",
   links: {
-    x: "https://x.com/lecon",
-    linkedin: "https://www.linkedin.com/lecon",
     instagram: "https://www.instagram.com/rathon.fast/",
     youtube: "https://www.youtube.com/@RathonRw",
-    email: "lecon@pm.me",
+    email: "leconstantin@proton.me",
     whatsapp: "https://wa.me/250792636403",
+    x: "https://x.com/le_con82546",
+    linkedin: "https://www.linkedin.com/in/leoconstantin/",
     github: "https://github.com/leconstantin",
   },
   keywords: [

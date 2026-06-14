@@ -48,7 +48,7 @@ export function Stack() {
       icon: "/icons/python.svg",
       href: "https://www.python.org",
     },
-    { name: "AI", icon: "/icons/openai.svg", href: "https://openai.com" },
+    { name: "AI", icon: "/icons/claude-mono.svg", href: "https://claude.ai/" },
     {
       name: "Tailwind",
       icon: "/icons/tailwindcss.svg",
@@ -60,7 +60,7 @@ export function Stack() {
       href: "https://www.convex.dev",
     },
     { name: "Vercel", icon: "/icons/vercel.svg", href: "https://vercel.com" },
-    { name: "Bun", icon: "/icons/bun.svg", href: "https://bun.sh" },
+    { name: "Pnpm", icon: "/icons/pnpm-mono.svg", href: "https://pnpm.io" },
   ];
 
   return (
