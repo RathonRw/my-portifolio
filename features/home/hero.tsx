@@ -67,7 +67,7 @@ export function Hero({ initialStats }: { initialStats: Stats }) {
                 <a
                   className="underline decoration-muted-foreground/30 underline-offset-[5px] transition-colors hover:decoration-foreground"
                   href="https://rathon-rw.com/"
-                  rel="noopener noreferrer"
+                  rel="noopener"
                   target="_blank"
                 >
                   Rathon
@@ -80,7 +80,7 @@ export function Hero({ initialStats }: { initialStats: Stats }) {
                 <a
                   className="underline decoration-muted-foreground/30 underline-offset-[5px] transition-colors hover:decoration-foreground"
                   href="https://kuluchat.vercel.app/"
-                  rel="noopener noreferrer"
+                  rel="noopener"
                   target="_blank"
                 >
                   KuluChat
